@@ -3,7 +3,7 @@ import 'package:movie_app/modules/movie/data/models/movie_model.dart';
 final mockMovieModel = MovieModel(
   id: 634649,
   title: "Spider-Man: No Way Home",
-  genresList: const [28, 12, 878],
+  genresList: const ['Action', "Adventure", "Science Fiction"],
   mediaType: "movie",
   description:
       "Peter Parker is unmasked and no longer able to separate his normal life from the high-stakes of being a super-hero. When he asks for help from Doctor Strange the stakes become even more dangerous, forcing him to discover what it truly means to be Spider-Man.",

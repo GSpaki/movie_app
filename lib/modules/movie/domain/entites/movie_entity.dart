@@ -3,7 +3,7 @@ import 'package:equatable/equatable.dart';
 class MovieEntity extends Equatable {
   final int id;
   final String title;
-  final List<int> genresList;
+  final List<String> genresList;
   final String mediaType;
   final String description;
   final DateTime releaseDate;
