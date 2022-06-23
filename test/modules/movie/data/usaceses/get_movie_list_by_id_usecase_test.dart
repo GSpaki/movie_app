@@ -9,11 +9,11 @@ import 'package:movie_app/modules/shared/failures/repository_failure.dart';
 
 import '../../mocks/mock_movie_list_model.dart';
 
-class MockMovieRepository extends Mock implements IMovieRepository {}
+class MockMovieRepository extends Mock implements IMovieListRepository {}
 
 void main() {
   late IMovieListUsecase usecase;
-  late IMovieRepository repository;
+  late IMovieListRepository repository;
 
   setUp(() {
     repository = MockMovieRepository();

@@ -1,4 +1,5 @@
 import '../../domain/entites/movie_entity.dart';
+import '../i_mappers/i_movie_mapper.dart';
 
 class MovieModel extends MovieEntity {
   const MovieModel({
@@ -15,4 +16,8 @@ class MovieModel extends MovieEntity {
     required super.voteCount,
     required super.isAdult,
   });
+
+  factory MovieModel.fromData(IMovieMapper mapper, dynamic data) {
+    return mapper.movieFromData(data);
+  }
 }
