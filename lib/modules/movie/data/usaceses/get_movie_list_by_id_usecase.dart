@@ -13,7 +13,7 @@ class GetMovieListByIdUsecase implements IMovieListUsecase<int> {
   @override
   Future<Result<MovieListEntity, IFailure>> getMovieList(int movieId) async {
     try {
-      final result = await _repository.getMovie(movieId);
+      final result = await _repository.getMovieList(movieId);
       return Result.ok(result);
     } on IFailure catch (failure) {
       return Result.err(failure);

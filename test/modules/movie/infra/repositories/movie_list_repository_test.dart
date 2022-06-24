@@ -34,7 +34,7 @@ void main() {
       when(() => mapper.movieListFromData(any())).thenAnswer((_) => mockMovieListModel);
 
       //act
-      final actual = await repository.getMovie(1);
+      final actual = await repository.getMovieList(1);
 
       //assert
       expect(actual, isA<MovieListModel>());
@@ -49,7 +49,7 @@ void main() {
       when(() => mapper.movieListFromData(any())).thenThrow(TypeError());
 
       //act
-      final actual = repository.getMovie(1);
+      final actual = repository.getMovieList(1);
 
       //assert
       expect(actual, throwsA(isA<MapperFailure>()));
@@ -63,7 +63,7 @@ void main() {
       when(() => datasource.getMovieList(any())).thenThrow(DatasourceFailure());
 
       //act
-      final actual = repository.getMovie(1);
+      final actual = repository.getMovieList(1);
 
       //assert
       expect(actual, throwsA(isA<DatasourceFailure>()));

@@ -24,7 +24,7 @@ void main() {
     "Usecase should return a movie list entity when called successefully",
     () async {
       //arrange
-      when(() => repository.getMovie(any())).thenAnswer((_) async => mockMovieListModel);
+      when(() => repository.getMovieList(any())).thenAnswer((_) async => mockMovieListModel);
 
       //act
       final result = await usecase.getMovieList(10);
@@ -39,7 +39,7 @@ void main() {
     "Usecase should return a failure when called unsuccessefully",
     () async {
       //arrange
-      when(() => repository.getMovie(any())).thenThrow(RepositoryFailure());
+      when(() => repository.getMovieList(any())).thenThrow(RepositoryFailure());
 
       //act
       final result = await usecase.getMovieList(10);

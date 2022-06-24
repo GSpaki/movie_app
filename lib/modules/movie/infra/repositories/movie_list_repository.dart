@@ -14,7 +14,7 @@ class MovieListRepository implements IMovieListRepository {
         _mapper = mapper;
 
   @override
-  Future<MovieListModel> getMovie(int movieId) async {
+  Future<MovieListModel> getMovieList(int movieId) async {
     final dynamic data;
 
     try {
