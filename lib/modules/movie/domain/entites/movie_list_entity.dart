@@ -10,6 +10,7 @@ class MovieListEntity extends Equatable {
   final String createdBy;
   final int favoriteCount;
   final int listSize;
+  final bool isLiked;
   final List<MovieEntity> moviesList;
 
   const MovieListEntity({
@@ -21,6 +22,7 @@ class MovieListEntity extends Equatable {
     required this.favoriteCount,
     required this.listSize,
     required this.moviesList,
+    this.isLiked = false,
   });
 
   @override

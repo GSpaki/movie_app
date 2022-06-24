@@ -13,6 +13,7 @@ class MovieEntity extends Equatable {
   final double voteAvarage;
   final int voteCount;
   final bool isAdult;
+  final bool isWatched;
 
   const MovieEntity({
     required this.id,
@@ -27,6 +28,7 @@ class MovieEntity extends Equatable {
     required this.voteAvarage,
     required this.voteCount,
     required this.isAdult,
+    this.isWatched = false,
   });
 
   @override
