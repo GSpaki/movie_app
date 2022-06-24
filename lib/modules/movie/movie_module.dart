@@ -1,11 +1,13 @@
 import 'package:dio/dio.dart';
 import 'package:flutter_modular/flutter_modular.dart';
+import 'package:modular_bloc_bind/modular_bloc_bind.dart';
 
 import 'data/usaceses/get_movie_list_by_id_usecase.dart';
 import 'external/the_movie_db/datasource/tmdb_movie_list_datasource.dart';
 import 'external/the_movie_db/mappers/tmdb_movie_list_mapper.dart';
 import 'external/the_movie_db/mappers/tmdb_movie_mapper.dart';
 import 'infra/repositories/movie_list_repository.dart';
+import 'presentation/blocs/movie_list_cubit/movie_list_cubit.dart';
 
 class MovieModule extends Module {
   @override
@@ -16,6 +18,7 @@ class MovieModule extends Module {
         Bind.lazySingleton((i) => TmdbMovieMapper()),
         Bind.lazySingleton((i) => TmdbMovieListDatasource(i())),
         Bind.lazySingleton((i) => Dio()),
+        BlocBind.lazySingleton((i) => MovieListCubit(i())),
       ];
 
   @override
