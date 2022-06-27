@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_modular/flutter_modular.dart';
+
+import '../watched_count/watched_count_cubit/watched_count_cubit.dart';
 
 class WatchedButton extends StatefulWidget {
   const WatchedButton(
@@ -13,6 +16,7 @@ class WatchedButton extends StatefulWidget {
 }
 
 class _WatchedButtonState extends State<WatchedButton> with AutomaticKeepAliveClientMixin {
+  final countCubit = Modular.get<WatchedCountCubit>();
   late bool isPressed;
 
   @override
@@ -29,6 +33,7 @@ class _WatchedButtonState extends State<WatchedButton> with AutomaticKeepAliveCl
     super.build(context);
     return IconButton(
       onPressed: () {
+        (isPressed == false) ? countCubit.increment() : countCubit.decrement();
         setState(() {
           isPressed = !isPressed;
         });

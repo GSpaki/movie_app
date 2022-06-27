@@ -13,6 +13,10 @@ class MovieListEntity extends Equatable {
   final bool isLiked;
   final List<MovieEntity> moviesList;
 
+  int get watchedTotal {
+    return moviesList.where((movie) => (movie.isWatched == true)).length;
+  }
+
   const MovieListEntity({
     required this.name,
     required this.id,
