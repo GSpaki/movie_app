@@ -6,7 +6,12 @@ class AppWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    Modular.setInitialRoute('/movie_list');
+
     return MaterialApp.router(
+      theme: ThemeData(
+        brightness: Brightness.dark,
+      ),
       routeInformationParser: Modular.routeInformationParser,
       routerDelegate: Modular.routerDelegate,
     );

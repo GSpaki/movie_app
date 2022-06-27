@@ -8,6 +8,8 @@ import 'external/the_movie_db/mappers/tmdb_movie_list_mapper.dart';
 import 'external/the_movie_db/mappers/tmdb_movie_mapper.dart';
 import 'infra/repositories/movie_list_repository.dart';
 import 'presentation/blocs/movie_list_cubit/movie_list_cubit.dart';
+import 'presentation/components/watched_count/watched_count_cubit/watched_count_cubit.dart';
+import 'ui/movie_list_page.dart';
 
 class MovieModule extends Module {
   @override
@@ -19,8 +21,11 @@ class MovieModule extends Module {
         Bind.lazySingleton((i) => TmdbMovieListDatasource(i())),
         Bind.lazySingleton((i) => Dio()),
         BlocBind.lazySingleton((i) => MovieListCubit(i())),
+        BlocBind.lazySingleton((i) => WatchedCountCubit()),
       ];
 
   @override
-  List<ModularRoute> get routes => [];
+  List<ModularRoute> get routes => [
+        ChildRoute('/', child: (context, args) => MovieListPage()),
+      ];
 }
