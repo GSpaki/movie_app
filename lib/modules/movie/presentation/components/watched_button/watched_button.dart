@@ -1,15 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 
+import '../../../infra/i_storages/i_movies_watched_local_storage.dart';
 import '../watched_count/watched_count_cubit/watched_count_cubit.dart';
 
 class WatchedButton extends StatefulWidget {
-  const WatchedButton(
-    this.isWatched, {
+  const WatchedButton({
     super.key,
+    required this.id,
+    required this.isWatched,
   });
 
   final bool isWatched;
+  final int id;
 
   @override
   State<WatchedButton> createState() => _WatchedButtonState();
@@ -17,6 +20,7 @@ class WatchedButton extends StatefulWidget {
 
 class _WatchedButtonState extends State<WatchedButton> with AutomaticKeepAliveClientMixin {
   final countCubit = Modular.get<WatchedCountCubit>();
+  final watchedStore = Modular.get<IMoviesWatchedLocalStorage>();
   late bool isPressed;
 
   @override
@@ -32,8 +36,14 @@ class _WatchedButtonState extends State<WatchedButton> with AutomaticKeepAliveCl
   Widget build(BuildContext context) {
     super.build(context);
     return IconButton(
-      onPressed: () {
-        (isPressed == false) ? countCubit.increment() : countCubit.decrement();
+      onPressed: () async {
+        if (isPressed == false) {
+          countCubit.increment();
+          watchedStore.put(widget.id, true);
+        } else {
+          countCubit.decrement();
+          watchedStore.put(widget.id, false);
+        }
         setState(() {
           isPressed = !isPressed;
         });

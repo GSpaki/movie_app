@@ -32,6 +32,7 @@ class MovieListPresenter extends StatelessWidget {
             likeCount: state.entity.favoriteCount,
             numberOfMovies: state.entity.listSize,
             numberOfWatchedMovies: state.entity.watchedTotal,
+            id: state.entity.id,
           ),
           ...state.entity.moviesList.map((movie) => MovieTile(movie)),
         ],

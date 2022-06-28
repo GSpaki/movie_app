@@ -4,21 +4,22 @@ import '../liked_button/liked_button.dart';
 import '../watched_count/watched_count.dart';
 
 class MovieListHeader extends StatelessWidget {
-  const MovieListHeader({
-    super.key,
-    required this.listName,
-    required this.imageUrl,
-    required this.likeCount,
-    required this.isLiked,
-    required this.numberOfMovies,
-    required this.numberOfWatchedMovies,
-  });
+  const MovieListHeader(
+      {super.key,
+      required this.listName,
+      required this.imageUrl,
+      required this.likeCount,
+      required this.isLiked,
+      required this.numberOfMovies,
+      required this.numberOfWatchedMovies,
+      required this.id});
 
   final String listName;
   final String imageUrl;
   final int likeCount;
   final int numberOfMovies;
   final int numberOfWatchedMovies;
+  final int id;
   final bool isLiked;
 
   @override
@@ -55,7 +56,7 @@ class MovieListHeader extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Flexible(child: Text(listName)),
-                    LikedButton(isLiked),
+                    LikedButton(isLiked: isLiked, id: id),
                   ],
                 ),
                 Row(

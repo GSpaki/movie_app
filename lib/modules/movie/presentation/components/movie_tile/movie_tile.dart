@@ -34,7 +34,7 @@ class MovieTile extends StatelessWidget {
               ],
             ),
           ),
-          WatchedButton(entity.isWatched),
+          WatchedButton(id: entity.id, isWatched: entity.isWatched),
         ],
       ),
     );

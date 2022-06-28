@@ -17,7 +17,7 @@ class WatchedCount extends StatelessWidget {
   final countCubit = Modular.get<WatchedCountCubit>();
   @override
   Widget build(BuildContext context) {
-    // countCubit.setInitialValue(actual);
+    countCubit.setInitialValue(actual);
 
     return StreamBuilder<Object>(
         stream: countCubit.stream,
