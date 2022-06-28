@@ -8,6 +8,6 @@ class AppModule extends Module {
 
   @override
   List<ModularRoute> get routes => [
-        ModuleRoute('/movie_list', module: MovieModule()),
+        ModuleRoute('/movie_list/', module: MovieModule()),
       ];
 }
