@@ -13,7 +13,7 @@ O cabeçalho tem um botão de favorito. Tanto o botão de favorito e os de assis
 Caso ocorra um erro de obtenção do filme ou mapeamento de dados, o aplicativo infroma o erro para o usuário. 
 
 ## Screenshot
-![Screenshot](https://github.com/GSpaki/movie_app/tree/master/screenshots/screenshot1.png)
+![Screenshot](https://github.com/GSpaki/movie_app/blob/master/screenshots/screenshot1.png?raw=true)
 
 ## API
 <p>A API utilizada é a TheMovieDB.
