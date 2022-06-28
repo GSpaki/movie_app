@@ -8,6 +8,7 @@ import 'external/the_movie_db/mappers/tmdb_movie_list_mapper.dart';
 import 'external/the_movie_db/mappers/tmdb_movie_mapper.dart';
 import 'infra/i_storages/i_lists_liked_local_storage.dart';
 import 'infra/repositories/movie_list_repository.dart';
+import 'local/hive_local_storage/storage/hive_liked_list_local_storage.dart';
 import 'local/hive_local_storage/storage/hive_watched_movie_local_storage.dart';
 import 'presentation/blocs/movie_list_cubit/movie_list_cubit.dart';
 import 'presentation/components/watched_count/watched_count_cubit/watched_count_cubit.dart';
@@ -28,6 +29,8 @@ class MovieModule extends Module {
         Bind.lazySingleton((i) => TmdbMovieMapper()),
         Bind.lazySingleton((i) => TmdbMovieListDatasource(i())),
         Bind.lazySingleton((i) => Dio()),
+        Bind.singleton((i) => HiveLikedListsLocalStorage()),
+        Bind.singleton((i) => HiveMoviesWatchedLocalStorage()),
         BlocBind.lazySingleton((i) => MovieListCubit(i())),
         BlocBind.lazySingleton((i) => WatchedCountCubit()),
       ];
