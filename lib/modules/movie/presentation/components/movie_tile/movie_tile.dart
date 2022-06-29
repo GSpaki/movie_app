@@ -21,7 +21,10 @@ class MovieTile extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               mainAxisSize: MainAxisSize.min,
               children: [
-                Text(entity.title),
+                Text(
+                  entity.title,
+                  style: Theme.of(context).textTheme.bodyLarge,
+                ),
                 Row(
                   children: [
                     Text(entity.releaseDate.year.toString()),

@@ -55,7 +55,11 @@ class MovieListHeader extends StatelessWidget {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Flexible(child: Text(listName)),
+                    Flexible(
+                        child: Text(
+                      listName,
+                      style: Theme.of(context).textTheme.headlineSmall,
+                    )),
                     LikedButton(isLiked: isLiked, id: id),
                   ],
                 ),
