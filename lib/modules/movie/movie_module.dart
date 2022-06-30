@@ -13,6 +13,7 @@ import 'local/hive_local_storage/storage/hive_watched_movie_local_storage.dart';
 import 'presentation/blocs/movie_list_cubit/movie_list_cubit.dart';
 import 'presentation/components/watched_count/watched_count_cubit/watched_count_cubit.dart';
 import 'ui/movie_list_page.dart';
+import 'ui/movie_page.dart';
 
 class MovieModule extends Module {
   @override
@@ -38,5 +39,6 @@ class MovieModule extends Module {
   @override
   List<ModularRoute> get routes => [
         ChildRoute('/', child: (context, args) => MovieListPage()),
+        ChildRoute('/movie', child: (context, args) => MoviePage(args.data)),
       ];
 }

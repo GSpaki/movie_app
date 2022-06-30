@@ -6,7 +6,7 @@ class AppWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    Modular.setInitialRoute('/movie_list');
+    Modular.setInitialRoute('/movie_list/');
 
     return MaterialApp.router(
       theme: ThemeData(

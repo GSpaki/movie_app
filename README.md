@@ -10,6 +10,8 @@ Os filmes tem um botão de "watched" e o cabeçalho da lista faz a contagem de q
 
 O cabeçalho tem um botão de favorito. Tanto o botão de favorito e os de assistidos gravam os dados localmente, assim quando abrir novamente o app os botões continuaram no mesmo estado.
 
+Ao clicar no poster de um filme listado, o plicativo leva para uma página com mais detalhes do filme. A página está bem simples, apenas para mostrar a navegação e mostrar os demais parametros da entidade que não eram exibidos na lista.
+
 Caso ocorra um erro de obtenção do filme ou mapeamento de dados, o aplicativo infroma o erro para o usuário. 
 
 ## Screenshot

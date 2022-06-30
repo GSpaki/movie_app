@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_modular/flutter_modular.dart';
 
 import '../../../domain/entites/movie_entity.dart';
 import '../watched_button/watched_button.dart';
@@ -14,7 +15,10 @@ class MovieTile extends StatelessWidget {
       padding: const EdgeInsets.all(8.0),
       child: Row(
         children: [
-          Image.network(entity.posterImageUrl, height: 100),
+          InkWell(
+            onTap: () => Modular.to.pushNamed('/movie_list/movie', arguments: entity),
+            child: Image.network(entity.posterImageUrl, height: 100),
+          ),
           const SizedBox(width: 10),
           Flexible(
             child: Column(
